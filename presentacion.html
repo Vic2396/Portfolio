@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta dir="ltr">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="autor" content="Victor Mora">
+        <meta name="date" content="18-02-2024">
+        <title>LMSGI - Portfolio - Presentacion</title>
+        <link rel="stylesheet" href="CSS/presentacion.css">
+        <script src="JavaScript/presentacion.js" defer></script>
+    </head>
+
+    <body class="cuerpo">
+        <div class="precarga" id="precarga">
+            <div class="spinner"></div>
+        </div>
+        
+        <header class="cabecera"><!--Cabecera, menu para acceder a todas las pantallas-->
+            <button id="menuDesplegable" class="btn" onclick="mostrarMenu()"></button>
+            <nav  id="opciones" class="opciones">
+                <a href="presentacion.html">Presentaci&oacute;n</a>
+                <a href="experiencia.html">Curr&iacute;culum</a>
+                <a href="proyectos.html">Proyectos</a>                    
+                <a href="contacto.html">Contacto</a>
+            </nav>    
+        </header>
+
+        <main class="main">
+            <div class="presentacion" id="protegido">
+                <div class="bienvenidos">
+                    <h1>Bienvenidos</h1>
+                    <h2>Soy V&iacute;ctor, <span>diseñador web</span></h2>
+                </div>
+                <div class="visual">
+                    <img src="media/desarrollador-web.png" alt="foto de fondo">
+                </div>
+            </div>
+
+            <div class="contenido">
+                <div class="intro">
+                    <h3>En este sitio encontrar&aacute;s informaci&oacute;n sobre m&iacute; y los servicios que puedo ofrecerte</h3>
+                </div>
+
+                <div class="contenido-2">
+                    <div class="contenido-3" onclick="mostrarTexto(event)">
+                        <div class="titulo">
+                            <h4>Filosof&iacute;a</h4>
+                        </div>
+                        <div class="img">
+                            <img src="media/valores.png" alt="filosofia">
+                            <div class="texto">
+                                <p>Nuestra filosof&iacute;a como empresa se basa en la transparencia y confianza con el cliente. Un feedback constante que nos permita conocer cu&aacute;les son los objetivos y la visi&oacute;n exacta de lo que necesitas.</p>
+                                <p>Queremos plasmar tu idea como si lo hici&eacute;ramos desde tu cabeza. En esta empresa, t&uacute; formas parte del equipo.</p>
+                            </div>
+                        </div>         
+                    </div>
+
+                    <div class="contenido-3" onclick="mostrarTexto(event)">
+                        <div class="titulo">
+                            <h4>Servicios</h4>
+                        </div>
+                        <div class="img">
+                            <img src="media/diseño.jpg" alt="servicios">
+                            <div class="texto">
+                                <p>Algunos de los servicios que podemos ofrecer son:</p>
+                                <ul>
+                                    <li>Desarrollo de software a medida</li>
+                                    <li>Implementaci&oacute;n de tecnolog&iacute;as de la informaci&oacute;n</li>
+                                    <li>Consultor&iacute;a y asesoramiento tecnol&oacute;gico</li>
+                                    <li>Mantenimiento y soporte t&eacute;cnico</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="contenido-3" onclick="mostrarTexto(event)">
+                        <div class="titulo">
+                            <h4>Equipo</h4>
+                        </div>
+                        <div class="img">
+                            <img src="media/equipo.jpg" alt="equipo">
+                            <div class="texto">
+                                <p>Contamos con un equipo de profesionales con experiencia en las herramientas y procedimientos de desarrollo m&aacute;s vanguardistas, ofreciendo soluciones tecnol&oacute;gicas eficientes para pequeñas y medianas empresas. Adem&aacute;s de dominar varias plataformas, lenguajes y sistemas integrados.</p>
+                            </div>
+                        </div>                      
+                    </div>
+                </div>
+            </div> 
+        </main>
+    </body>
+</html>

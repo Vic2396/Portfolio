@@ -1,0 +1,524 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*los enlaces sin nigun subrayado ni decoracion especial*/
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+p{
+    font-weight: bold;
+    line-height: 1.4rem;
+    text-align: justify;
+}
+span{
+    width: max-content;
+    height: max-content;
+    padding: 8px;
+    background: rgba(31, 218, 255, 0.25);
+    box-shadow: 0 8px 20px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
+    border-radius: 10px;
+    border:1px rgba sólido (255, 255, 255, 0,18);
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    line-height: 1.3rem;
+}
+.texto{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-top: 1.25rem;
+    padding-left: 1.5rem;
+    padding-right: 0.6rem;
+}
+
+/* Personalizar la barra de desplazamiento en navegadores WebKit */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track de la barra */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color del pulgar de la barra */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+
+/******cuerpo******/
+.cuerpo{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: [cabecera] 3.4rem [main];
+    grid-template-areas: 
+    "cabecera"
+    "main";
+    background-attachment: fixed;
+    background: linear-gradient(90deg, rgba(203,238,174,1) 26%, rgba(148,215,233,1) 87%);
+}
+
+
+/******cabecera******/
+.cabecera{
+    grid-area: cabecera;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: flex-start;
+    z-index: 100;
+}
+.cabecera .btn{
+    width: 50px;
+    height: 50px;
+    display: block;
+    border: none;
+    border-radius: 100%;
+    margin: 10px;
+    background-image: url(media_css/flecha\ abajo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 1s;
+}
+/* Clase para rotar el botón del menú */
+.rotar{
+    transform: rotate(180deg);
+    
+}
+
+/*nav - direccion y posicion de los enlaces*/
+.opciones{
+    display: none;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    top: 4rem;
+    overflow: hidden;
+}
+.opciones a{
+    width: 8rem;
+    height: 3.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+/*cuando estamos sobre un enlace cambiamos el fondo*/
+.opciones a:hover{
+    background: rgba(96, 238, 207, 0.623);
+    color: black; 
+}
+/*cuando el ancho es mas pequeño mostramos el boton con opcion a menu vertical*/
+.mostrar{
+    display: flex;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media(min-width:514px){
+    .cabecera{
+        height: 3.4rem;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .cabecera .btn{
+        display: none;
+    }
+    .opciones{
+        display: flex;
+        flex-direction: row;
+        position: static;
+    }
+}
+
+/******main******/
+.main{
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    transition: 0.5s;
+    opacity: 0;
+}
+body.carga .main{
+    opacity: 1;
+}
+
+/****dispositivos moviles****/
+@media(max-width:739px){
+    p, ul, span, h4{
+        font-size: 0.8rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .main{
+        grid-template-columns: 1fr; 
+        grid-template-rows: 100%;
+        grid-template-areas: 
+        "izquierda";  
+    }
+    .main section{
+        min-width: 16rem;
+    }
+    .izquierda{
+        align-items: center;
+        padding-left: 0.4rem;
+    }
+    .izquierda section{
+        border-radius: 20px;
+    }
+    
+    /*escondemos la seccion de derecha*/
+    .derecha section{
+        display: none;
+    }
+
+    .izquierda .titulo{
+        width: 90%;
+    }
+    .experiencia .puesto{
+        flex-direction: column; 
+        gap: 0.5rem; 
+    }
+    .experiencia .subtexto-1{
+        width: 100%;
+    }
+    .img img{
+        width: 7rem;
+        height: 8.5rem;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 20px;
+    }
+    .programas .texto{
+        gap: 1rem;
+    }
+    .skill .texto{
+        gap: 1rem;
+    }
+}
+
+/****cosas comunes para dispositivos mas grandes****/
+@media(min-width:740px){
+    p, ul, span, h4{
+        font-size: 1rem;
+    }
+    h3{
+        font-size: 1.2rem;
+    }
+    .main{
+        grid-template-rows: 100%;
+        grid-template-areas: 
+        "izquierda derecha";
+    }
+    .izquierda{
+        padding-right: 1rem;
+        margin-bottom: 2rem;
+        align-items: end;
+    }
+    .derecha section{
+        display: flex;
+    }
+    
+    .izquierda .img{
+        display: none;
+    }
+    .izquierda .estudios{
+        display: none;
+    }
+    .izquierda .otros-datos{
+        display: none;
+    }
+    .estudios, .otros-datos{
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        padding-right: 1rem;
+        padding-left: 0.6rem;
+    }
+    .img img{
+        width: 14rem;
+        height: 17rem;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 20px;
+    }
+    .programas .texto{
+        gap: 1.5rem;
+    }
+    .skill .texto{
+        gap: 1.5rem;
+    }
+
+    /*edicion de zona derecha*/
+    .derecha{
+        grid-area: derecha;
+        align-items: start;
+        padding-left: 1rem;
+    }
+    .derecha section{
+        width: 60%;
+        height: max-content;
+        min-width: 18rem;
+        max-width: 28rem;
+        flex-direction: column;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .derecha .titulo{
+        width: 106%;
+        margin-left: 0.5rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+        padding-left: 1rem;
+        padding-right: 1.5rem;
+        background-color: rgb(83, 64, 150);
+        box-shadow: 5px 6px 5px rgb(8, 137, 212);
+        color: white;
+        border-top-left-radius: 20px;
+    }
+}
+
+/****ajustes intermedios****/
+@media(min-width:740px) and (max-width:1019px){
+    .main{
+        grid-template-columns: 55% 45%;   
+    }
+    .izquierda section{
+        min-width: 23rem;
+    }
+    .izquierda .titulo{
+        width: 80%;
+    }
+    .experiencia .puesto{
+        flex-direction: column; 
+        gap: 0.5rem; 
+    }
+    .experiencia .subtexto-1{
+        width: 100%;
+    }
+}
+@media(min-width:1020px) and (max-width:1199px){
+    .main{
+        grid-template-columns: 62% 38%;   
+    }
+    .izquierda section{
+        min-width: 33rem;
+    }
+    .izquierda .titulo{
+        width: 70%;
+    }
+    .experiencia .puesto{
+        flex-direction: column; 
+        gap: 0.5rem; 
+    }
+    .experiencia .subtexto-1{
+        width: 100%;
+    }
+}
+@media(min-width:1200px){
+    .izquierda section{
+        min-width: 48rem;
+    }
+    .izquierda .titulo{
+        width: 50%;
+    }
+    .experiencia .puesto{
+        flex-direction: row;  
+    }
+    .experiencia .subtexto-1{
+        width: 30%;
+    }
+}
+@media(min-width:1200px) and (max-width:1599px){
+    .main{
+        grid-template-columns: 68% 32%;   
+    }
+}
+
+/****pc en pantalla completa****/
+@media(min-width:1600px){
+    .main{
+        grid-template-columns: 55% 45%;       
+    }
+}
+
+/**comun de ambos lados**/
+.izquierda, .derecha{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+/*edicion de zona izquierda*/
+.izquierda{
+    grid-area: izquierda;
+}
+.izquierda section{
+    width: 80%;
+    height: max-content;
+    max-width: 55rem;
+    flex-direction: column;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-right: 1rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px; 
+    background: rgba(255, 255, 255, 0.65);
+}
+.izquierda .titulo{
+    margin-left: 0.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left:  1rem;
+    padding-right: 1.5rem;
+    transform: translateX(-1.5rem);
+    background-color: rgb(18, 18, 161);
+    box-shadow: 5px 6px 5px rgb(8, 137, 212);
+    color: white;
+    border-top-right-radius: 20px;
+}
+.izquierda h3{
+    padding-left: 1.5rem;  
+}
+
+/*experiencia*/
+.experiencia{
+    grid-area: experiencia;
+}
+.puesto{
+    display: flex;
+    padding-bottom: 1.25rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+    background: rgba(185, 187, 185, 0.233);
+}
+.puesto .subtexto-1{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+.puesto .subtexto-1 ul{
+    list-style-type: none;
+}
+.puesto .subtexto-2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    justify-content: start;
+}
+.puesto .subtexto-2 ul{
+    list-style-type: disc;
+    padding-left: 1.2rem;
+}
+
+/*programas*/
+.programas{
+    grid-area: programas;
+}
+.programas .texto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    justify-content: flex-start;
+}
+
+/*skills*/
+.skill{
+    grid-area: skills;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-right: 1rem;
+}
+.skill .texto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    justify-content: flex-start;
+}
+
+/*imagen*/
+.img{
+    grid-area: foto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*estudios*/
+.estudios{
+    grid-area: estudios;
+    display: flex;
+    background: rgba(255, 255, 255, 0.65);
+}
+.estudios .subtexto{
+    padding: 0.5rem;
+    border-radius: 20px;
+    background: rgba(185, 187, 185, 0.233);
+}
+.estudios ul{
+    list-style-type: none;
+}
+
+/*otros datos*/
+.otros-datos{
+    grid-area: otros-datos;
+    display: flex;
+    background: rgba(255, 255, 255, 0.65);
+}
+.otros-datos ul{
+    list-style-type: disc;
+    padding-top: 0.5rem;
+    padding-left: 1.2rem;
+}
+
+/* animacion para recarga de pagina */
+.precarga{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+.spinner{
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

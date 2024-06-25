@@ -1,0 +1,422 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+}
+/*los enlaces sin nigun subrayado ni decoracion especial*/
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+label{
+    font-size: 1rem;
+    word-spacing: 0.3rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+    text-align: justify;
+}
+
+legend{
+    visibility: collapse;
+}
+input:focus{
+    outline: none;
+}
+
+/* Personalizar la barra de desplazamiento en navegadores WebKit */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo del track de la barra */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; /* Color del pulgar de la barra */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/******cuerpo******/
+.cuerpo{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: [cabecera] 3.4rem [main];
+    grid-template-areas: 
+    "cabecera"
+    "main";
+    background-attachment: fixed;
+    background: linear-gradient(90deg, rgba(203,238,174,1) 26%, rgba(148,215,233,1) 87%);
+}
+
+/******cabecera******/
+.cabecera{
+    grid-area: cabecera;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: flex-start;
+    z-index: 100;
+}
+.cabecera .btn{
+    width: 50px;
+    height: 50px;
+    display: block;
+    border: none;
+    border-radius: 100%;
+    margin: 10px;
+    background-image: url(media_css/flecha\ abajo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 1s;
+}
+/* Clase para rotar el botón del menú */
+.rotar{
+    transform: rotate(180deg);
+}
+
+/*nav - direccion y posicion de los enlaces*/
+.opciones{
+    display: none;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    top: 4rem;
+    overflow: hidden;
+}
+.opciones a{
+    width: 8rem;
+    height: 3.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+/*cuando estamos sobre un enlace cambiamos el fondo*/
+.opciones a:hover{
+    background: rgba(96, 238, 207, 0.623);
+    color: black; 
+}
+
+/*cuando el ancho es mas pequeño mostramos el boton con opcion a menu vertical*/
+.mostrar{
+    display: flex;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+@media(min-width:514px){
+    .cabecera{
+        height: 3.4rem;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .cabecera .btn{
+        display: none;
+    }
+    .opciones{
+        display: flex;
+        flex-direction: row;
+        position: static;
+    }
+}
+
+/******main******/
+.main{
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-template-areas: 
+    "portada"
+    "plataformas"
+    "formulario";
+    justify-content: center;
+    overflow-x: hidden;
+    padding-bottom: 1rem;
+    transition: 0.5s;
+    opacity: 0;
+}
+body.carga .main{
+    opacity: 1;
+}
+
+.portada{
+    grid-area: portada;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+}
+.portada h1{
+    font-size: 2rem;
+    padding: 0.5rem;
+    color: black;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+}
+
+.plataformas{
+    grid-area: plataformas;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+.plataformas img{
+    width: 4rem;
+    height: 4rem;
+}
+
+fieldset{
+    border: none;
+    width: 100%;
+    height: max-content;
+    display: grid;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media(max-width:509px){
+    .formulario{
+        width: 18rem;
+        min-width: 17rem;
+    }
+    .personal div{
+        min-width: 17rem;
+    } 
+}
+@media(min-width:510px){
+    .formulario{
+        width: 80%;
+        min-width: 21rem;
+    }
+    .personal div{
+         min-width: 12rem;
+    } 
+}
+
+.formulario{
+    grid-area: formulario;
+    max-width: 45rem;
+    height: max-content;
+    display: grid;
+    justify-self: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 10px;
+}
+
+.personal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.personal div{
+    width: 45%;
+    max-width: 17rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.5rem;
+}
+.personal input{
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    word-spacing: 0.3rem;
+    line-height: 1.5rem;
+    font-weight: normal;
+    background: none;
+    border-bottom: 2px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+@media(max-width:529px){
+    .preferencias{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media(min-width:530px){
+    .preferencias{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+.preferencias{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+.preferencias .label{
+    width: max-content;
+}
+.op{
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 1rem;
+}
+.op .opcion{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem; 
+}
+.opcion input{
+    width: 1rem;
+    height: 1rem;
+}
+.opcion input:hover{
+    cursor: pointer;
+}
+
+.motivo-contacto{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 0.2rem;
+}
+.motivo-contacto div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.5rem;
+}
+select{
+    width: 100%;
+    height: max-content;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.6);
+}
+select:hover{
+    cursor: pointer;
+}
+
+textarea{
+    width: 100%;
+    height: 7rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    resize: none;
+}
+textarea:focus{
+    outline: none;
+}
+.botones{
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+}
+.botones input{
+    width: 5rem;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: rgba(0, 0, 0, 0.70);
+    border: none;
+    border-radius: 5px;
+}
+.botones input:active{
+    background: rgba(0, 0, 0, 0.35);
+}
+.botones input:hover{
+    cursor: pointer;
+}
+
+.mensaje-oculto {
+    display: none;
+    opacity: 0;
+    background-color: #000000cb;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* animacion para recarga de pagina */
+.precarga{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+.spinner{
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

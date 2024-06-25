@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta dir="ltr">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="autor" content="Victor Mora">
+        <meta name="date" content="18-02-2024">
+        <title>LMSGI - Portfolio - Contacto</title>
+        <link rel="stylesheet" href="CSS/contacto.css">
+        <script src="JavaScript/contacto.js" defer></script>
+    </head>
+
+    <body class="cuerpo">
+        <div class="precarga" id="precarga">
+            <div class="spinner"></div>
+        </div>
+
+        <header class="cabecera"><!--Cabecera, menu para acceder a todas las pantallas-->
+            <button id="menuDesplegable" class="btn" onclick="mostrarMenu()"></button>
+            <nav  id="opciones" class="opciones">
+                <a href="presentacion.html">Presentaci&oacute;n</a>
+                <a href="experiencia.html">Curr&iacute;culum</a>
+                <a href="proyectos.html">Proyectos</a>                    
+                <a href="contacto.html">Contacto</a>
+            </nav>    
+        </header>
+
+        <main class="main"><!--Contenido principal-->
+            <div class="portada">
+                <h1>Contacta con nosotros</h1><!--Titulo de la pagina-->
+            </div>
+            
+            <div class="plataformas">
+                <div>
+                    <a href="https://wa.me/34722225886"><img src="media/whatsapp circular.png" alt="telefono" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="mailto:vic23mora@gmail.com?"><img src="media/email.png" alt="email" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="https://ig.me/m/@vic_mora23"><img src="media/instagram circular.png" alt="social" loading="lazy"></a>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/victor.morarosique?"><img src="media/facebook circular.png" alt="social" loading="lazy"></a>
+                </div>
+            </div>        
+
+            <form class="formulario" id="formulario" action="php/form.php" method="post"><!--formulario para rellenar y pueda contactar con quien lo desee-->    
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <div class="personal">
+                        <div>
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" name="nombre" value="" required>
+                        </div>
+                        <div>
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" name="apellido" value="">
+                        </div>
+                    </div>
+                        
+                    <div class="personal">
+                        <div>
+                            <label for="telefono">Tel&eacute;fono *</label>
+                            <input type="tel" name="tel" id="tel" minlength="9" maxlength="9" placeholder="ej: 648 557 219" required>
+                        </div>
+                        <div>
+                            <label for="correo">Email *</label>
+                            <input type="email" name="correo" id="email" placeholder="ej: pablo23@gmail.com">
+                        </div>
+                    </div>
+                </fieldset>
+                    
+                <fieldset>
+                    <legend>Preferencias</legend>
+                    <div class="preferencias">
+                        <div class="label">
+                            <label for="preferencia">Preferencia de contacto:</label> 
+                        </div>
+                        <div class="op">    
+                            <div class="opcion">
+                                <input type="radio" name="contacto" value="telefono" checked="checked">
+                                <label for="telefono">Tel&eacute;fono</label>
+                            </div>           
+                            <div class="opcion">
+                                <input type="radio" name="contacto" value="email" checked="checked">
+                                <label for="email">Email</label> 
+                            </div> 
+                        </div>                      
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Motivo de contacto</legend>
+                    <div class="motivo-contacto">
+                        <div class="motivo">
+                            <label for="motivo">Motivo *</label>
+                            <select name="motivo" id="motivo" required>
+                                <option value="" selected="selected">- selecciona -</option>
+                                <option value="trabajar">Me interesa colaborar contigo</option>
+                                <option value="servicio">Estoy interesado en coger tus servicios</option>
+                                <option value="otros">Otro</option>
+                            </select>
+                        </div>                                                                                  
+                        <div class="observaciones">
+                            <label for="observaciones">En caso de otro motivo, ind&iacute;quelo por favor:</label>
+                            <textarea name="observaciones" id="observaciones" maxlength="400" placeholder="Ingresa aqu&iacute; tu motivo"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="botones">
+                    <!--tecla de borrar datos rellenados y enviar datos a formulario-->
+                    <label for="enviar"></label>
+                    <input type="submit" value="Enviar">
+
+                    <label for="reset"></label>
+                    <input type="reset" value="Limpiar">
+                </div>   
+                
+                <div class="mensaje-oculto" id="mensajeAnimado">
+                    Formulario enviado con &eacute;xito
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta dir="ltr">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="autor" content="Victor Mora">
+        <meta name="date" content="18-02-2024">
+        <title>LMSGI - Portfolio - Proyectos</title>
+        <link rel="stylesheet" href="CSS/proyectos.css">
+        <script src="JavaScript/proyectos.js" defer></script>
+    </head>
+
+    <body class="cuerpo">
+        <div class="precarga" id="precarga">
+            <div class="spinner"></div>
+        </div>
+        
+        <header class="cabecera"><!--Cabecera, menu para acceder a todas las pantallas-->
+            <button id="menuDesplegable" class="btn" onclick="mostrarMenu()"></button>
+            <nav  id="opciones" class="opciones">
+                <a href="presentacion.html">Presentaci&oacute;n</a>
+                <a href="experiencia.html">Curr&iacute;culum</a>
+                <a href="proyectos.html">Proyectos</a>                    
+                <a href="contacto.html">Contacto</a>
+            </nav>    
+        </header>
+
+        <main class="main"><!--Contenido principal-->
+            <div class="portada">
+                <h1 id="Proyectos">Proyectos</h1><!--Titulo de la pagina-->
+            </div>
+
+            <div class="contenido">
+                <!--<a href="https://github.com/Vic2396/Peluqueria">-->
+                    <div class="proyecto">
+                        <div class="titulo">
+                            <h4>Peluquer&iacute;a</h4> 
+                        </div>
+                        <div class="img" onclick="mostrarTexto(event)">
+                            <img src="media/peluqueria.jpg" alt="peluqueria">
+                            <div class="texto">
+                                <ul>
+                                    <li>Gesti&oacute;n de citas</li>
+                                    <li>Recordatorios</li>
+                                    <li>Venta de productos capilares</li>
+                                    <li>Tarifas de servicios</li>
+                                    <li>Cortes de pelo realizados</li>
+                                </ul>
+                            </div>                      
+                        </div>
+                    </div>
+                <!--</a>-->
+
+                <!--<a href="https://github.com/Vic2396/Correduria-de-seguros">-->
+                    <div class="proyecto">
+                        <div class="titulo">
+                            <h4>Corredur&iacute;a de seguros</h4> 
+                        </div>
+                        <div class="img" onclick="mostrarTexto(event)">
+                            <img src="media/seguros.jpg" alt="correduria de seguros">
+                            <div class="texto">
+                                <ul>
+                                    <li>Gesti&oacute;n de p&oacute;lizas</li>
+                                    <li>Gesti&oacute;n de recibos</li>
+                                    <li>Gesti&oacute;n de citas con asesor</li>
+                                    <li>Generar presupuestos</li>
+                                    <li>Posibilidad de adjuntar documentación</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <!--</a>-->
+
+                <!--<a href="https://github.com/Vic2396/Centro-de-salud">-->
+                    <div class="proyecto">
+                        <div class="titulo">
+                            <h4>Centro sanitario</h4> 
+                        </div>
+                        <div class="img" onclick="mostrarTexto(event)">
+                            <img src="media/salud.png" alt="centro sanitario">
+                            <div class="texto">
+                                <ul>
+                                    <li>Gesti&oacute;n de usuarios</li>
+                                    <li>Gesti&oacute;n de citas</li>
+                                    <li>Historial de pacientes</li>
+                                    <li>Acceso a justificantes m&eacute;dicos</li>
+                                    <li>Consultas con paciente por videollamada</li>
+                                </ul>
+                            </div>                       
+                        </div>
+                    </div>
+                <!--</a>-->
+
+                <!--<a href="https://github.com/Vic2396/Banca-online">-->
+                    <div class="proyecto">
+                        <div class="titulo">
+                            <h4>Banca online</h4> 
+                        </div>
+                        <div class="img" onclick="mostrarTexto(event)">
+                            <img src="media/banca.png" alt="banca online">
+                            <div class="texto">
+                                <ul>
+                                    <li>Balance de ingresos y gastos</li>
+                                    <li>Avisos de confirmaci&oacute;n de compras</li>
+                                    <li>Transferencias</li>
+                                    <li>Bizum</li>
+                                    <li>Solicitud de cr&eacute;ditos</li>
+                                    <li>Tarjetas prepago</li>
+                                </ul>
+                            </div>                       
+                        </div>
+                    </div>
+                <!--</a>-->
+
+                <!--<a href="https://github.com/Vic2396/Tienda-2-mano">-->
+                    <div class="proyecto">
+                        <div class="titulo">
+                            <h4>Tienda 2ª mano</h4> 
+                        </div>
+                        <div class="img" onclick="mostrarTexto(event)">
+                            <img src="media/tienda.jpg" alt="tienda de segunda mano">
+                            <div class="texto">
+                                <ul>
+                                    <li>Venta de todo tipo de productos</li>
+                                    <li>Datos de vendedor</li>
+                                    <li>Posibilidad de chatear con vendedor</li>
+                                </ul>
+                            </div>                       
+                        </div>
+                    </div>
+                <!--</a>-->
+
+                <!--<a href="https://github.com/Vic2396/Alojamientos">-->
+                    <div class="proyecto">
+                        <div class="titulo">
+                            <h4>Alojamientos</h4> 
+                        </div>
+                        <div class="img" onclick="mostrarTexto(event)">
+                            <img src="media/alojamiento.jpg" alt="alojamientos">
+                            <div class="texto">
+                                <ul>
+                                    <li>Filtros en b&uacute;squedas</li>
+                                    <li>Recomendaci&oacute;n de alojamientos</li>
+                                    <li>Gesti&oacute;n de reservas</li>
+                                    <li>Gesti&oacute;n de vuelo + hotel</li>
+                                    <li>Contratar actividades</li>
+                                </ul>
+                            </div>                       
+                        </div>
+                    </div>
+                <!--</a>-->
+            </div>
+        </main>
+    </body>
+</html>
